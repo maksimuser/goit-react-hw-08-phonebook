@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { login } from '../redux/auth';
 
+import styles from './pages.module.scss';
+
 class LoginPage extends Component {
   state = {
     email: '',
@@ -29,30 +31,32 @@ class LoginPage extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div>
-        <h2>Страница авторизации</h2>
+      <div className={styles.Page}>
+        <h2>Page login</h2>
 
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Почта
+        <form onSubmit={this.handleSubmit} className={styles.form}>
+          <label className={styles.label}>
+            Email
             <input
               name="email"
               type="email"
               value={email}
               onChange={this.handleChange}
+              placeholder="Type email"
             />
           </label>
-          <label>
-            Пароль
+          <label className={styles.label}>
+            Password
             <input
               name="password"
               type="password"
               value={password}
               onChange={this.handleChange}
+              placeholder="Type password"
             />
           </label>
 
-          <button type="submit">Войти</button>
+          <button type="submit">Sing in</button>
         </form>
       </div>
     );

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { register } from '../redux/auth';
 
+import styles from './pages.module.scss';
+
 class RegisterPage extends Component {
   state = {
     name: '',
@@ -29,39 +31,42 @@ class RegisterPage extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div>
-        <h2>Страница регистрации</h2>
+      <div className={styles.Page}>
+        <h2>Page register</h2>
 
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Имя
+        <form onSubmit={this.handleSubmit} className={styles.form}>
+          <label className={styles.label}>
+            Name
             <input
               name="name"
               type="text"
               value={name}
               onChange={this.handleChange}
+              placeholder="Type name"
             />
           </label>
-          <label>
-            Почта
+          <label className={styles.label}>
+            Email
             <input
               name="email"
               type="email"
               value={email}
               onChange={this.handleChange}
+              placeholder="Type email"
             />
           </label>
-          <label>
-            Пароль
+          <label className={styles.label}>
+            Password
             <input
               name="password"
               type="password"
               value={password}
               onChange={this.handleChange}
+              placeholder="Type password"
             />
           </label>
 
-          <button type="submit">Зарегистрироваться</button>
+          <button type="submit">Register</button>
         </form>
       </div>
     );

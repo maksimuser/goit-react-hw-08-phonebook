@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import { getUserEmail, logout } from '../../redux/auth';
 
+import styles from './UserMenu.module.scss';
+
 const UserMenu = ({ email, onLogout }) => (
-  <div>
-    <h2>User Menu</h2>
-    <span>Добро пожаловать, {email}</span>
+  <div className={styles.UserMenu}>
+    <span className={styles.email}>Welcome, {email}</span>
     <button type="button" onClick={onLogout}>
-      Выйти
+      Logout
     </button>
   </div>
 );

@@ -30,6 +30,7 @@ p {
 .Container {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   margin-right: auto;
   margin-left: auto;
   padding: 10px;
@@ -38,6 +39,7 @@ p {
   border: 1px solid black;
   border-radius: 3px;
 }
+
 .Contacts {
   display: inline-flex;
   flex-direction: column;
