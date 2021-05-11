@@ -33,31 +33,39 @@ class LoginPage extends Component {
     const { email, password } = this.state;
     return (
       <div className={styles.Page}>
-        <h2>Page login</h2>
-
         <form onSubmit={this.handleSubmit} className={styles.form}>
-          <label className={styles.label}>
-            Email
-            <input
-              name="email"
-              type="email"
-              value={email}
-              onChange={this.handleChange}
-              placeholder="Type email"
-            />
-          </label>
-          <label className={styles.label}>
-            Password
-            <input
-              name="password"
-              type="password"
-              value={password}
-              onChange={this.handleChange}
-              placeholder="Type password"
-            />
-          </label>
+          <div className={styles.form__group}>
+            <label className={styles.form__label}>
+              Email
+              <input
+                autoComplete="off"
+                name="email"
+                type="email"
+                value={email}
+                onChange={this.handleChange}
+                placeholder=" "
+                className={styles.form__input}
+              />
+            </label>
+          </div>
 
-          <button type="submit">Sing in</button>
+          <div className={styles.form__group}>
+            <label className={styles.form__label}>
+              Password
+              <input
+                name="password"
+                type="password"
+                value={password}
+                onChange={this.handleChange}
+                placeholder=" "
+                className={styles.form__input}
+              />
+            </label>
+          </div>
+
+          <button type="submit" className={styles.form__btn}>
+            Sing in
+          </button>
         </form>
       </div>
     );

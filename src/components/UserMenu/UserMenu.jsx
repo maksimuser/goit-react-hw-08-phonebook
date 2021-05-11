@@ -8,7 +8,7 @@ import styles from './UserMenu.module.scss';
 const UserMenu = ({ email, onLogout }) => (
   <div className={styles.UserMenu}>
     <span className={styles.email}>Welcome, {email}</span>
-    <button type="button" onClick={onLogout}>
+    <button type="button" onClick={onLogout} className={styles.btn}>
       Logout
     </button>
   </div>

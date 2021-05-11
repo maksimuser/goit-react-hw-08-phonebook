@@ -34,41 +34,50 @@ class RegisterPage extends Component {
 
     return (
       <div className={styles.Page}>
-        <h2>Page register</h2>
-
         <form onSubmit={this.handleSubmit} className={styles.form}>
-          <label className={styles.label}>
-            Name
-            <input
-              name="name"
-              type="text"
-              value={name}
-              onChange={this.handleChange}
-              placeholder="Type name"
-            />
-          </label>
-          <label className={styles.label}>
-            Email
-            <input
-              name="email"
-              type="email"
-              value={email}
-              onChange={this.handleChange}
-              placeholder="Type email"
-            />
-          </label>
-          <label className={styles.label}>
-            Password
-            <input
-              name="password"
-              type="password"
-              value={password}
-              onChange={this.handleChange}
-              placeholder="Type password"
-            />
-          </label>
+          <div className={styles.form__group}>
+            <label className={styles.form__label}>
+              Name
+              <input
+                autoComplete="off"
+                className={styles.form__input}
+                name="name"
+                type="text"
+                value={name}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
 
-          <button type="submit">Register</button>
+          <div className={styles.form__group}>
+            <label className={styles.form__label}>
+              Email
+              <input
+                autoComplete="off"
+                className={styles.form__input}
+                name="email"
+                type="email"
+                value={email}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <div className={styles.form__group}>
+            <label className={styles.form__label}>
+              Password
+              <input
+                className={styles.form__input}
+                name="password"
+                type="password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+
+          <button className={styles.form__btn} type="submit">
+            Register
+          </button>
         </form>
       </div>
     );
