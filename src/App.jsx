@@ -3,6 +3,7 @@ import { Redirect, Switch } from 'react-router-dom';
 import { PublicRoute, PrivateRoute } from 'react-private-public-route';
 import { Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { getIsAuthenticated } from './redux/auth';
 
@@ -62,6 +63,11 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  getUser: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   isAuthenticated: getIsAuthenticated(state),

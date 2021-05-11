@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { register } from '../redux/auth';
 
 import styles from './pages.module.scss';
@@ -72,6 +74,10 @@ class RegisterPage extends Component {
     );
   }
 }
+
+RegisterPage.propTypes = {
+  onRegister: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = {
   onRegister: register,

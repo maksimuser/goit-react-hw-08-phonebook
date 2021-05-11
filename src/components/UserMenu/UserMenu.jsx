@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { getUserEmail, logout } from '../../redux/auth';
 
 import styles from './UserMenu.module.scss';
@@ -11,6 +13,11 @@ const UserMenu = ({ email, onLogout }) => (
     </button>
   </div>
 );
+
+UserMenu.propTypes = {
+  email: PropTypes.string.isRequired,
+  onLogout: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   email: getUserEmail(state),

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { fetchContacts } from '../redux/contacts';
 import ContactList from '../components/ContactList';
 import Filter from '../components/Filter';
@@ -24,6 +26,10 @@ class ContactsPage extends Component {
     );
   }
 }
+
+ContactsPage.propTypes = {
+  fetchContacts: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = {
   fetchContacts: fetchContacts,

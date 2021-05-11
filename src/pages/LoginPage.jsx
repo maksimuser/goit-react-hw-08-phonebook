@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { login } from '../redux/auth';
 
@@ -62,6 +63,10 @@ class LoginPage extends Component {
     );
   }
 }
+
+LoginPage.propTypes = {
+  onLogin: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = {
   onLogin: login,
